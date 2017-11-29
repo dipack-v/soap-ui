@@ -8,7 +8,7 @@ Run a test step and use response to anthoer step
   def groovyUtils = new  com.eviware.soapui.support.GroovyUtils(context);
   testRunner.runTestStepByName("GetAllCountries");
   def holder = groovyUtils.getXmlHolder( testRunner.testCase.testSteps["GetAllCountries"].testRequest.response.responseContent );
-  holder.namespaces["v3"] = "http://services.apmoller.net/AMM/VesselScheduleRetrieval/v3"
+  holder.namespaces["v3"] = "http://your-namespace-url"
   for( countryCode in holder.getNodeValues( "//v3:AlternativeCodeVal" )){
 	  sleep(1000);
 	  prop = testRunner.testCase.testSteps['Properties'];
