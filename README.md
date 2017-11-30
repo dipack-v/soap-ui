@@ -10,7 +10,7 @@ def f = new File("C:/Users/dvi031/ports.csv");
 def groovyUtils = new  com.eviware.soapui.support.GroovyUtils(context);
 testRunner.runTestStepByName("GetAllCountries");
 def holder = groovyUtils.getXmlHolder( testRunner.testCase.testSteps["GetAllCountries"].testRequest.response.responseContent );
-holder.namespaces["v3"] = "http://services.apmoller.net/AMM/VesselScheduleRetrieval/v3"
+holder.namespaces["v3"] = "http://<your-namesapce-host>"
 
 for( countryCode in holder.getNodeValues( "//v3:AlternativeCodeVal" )){
 	sleep(1000);
